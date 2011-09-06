@@ -1,12 +1,30 @@
 <?php
-trait T {
-	public function __construct() {
-		echo "Constructor called!\n";
-	}
+trait Tmagic {
+    public function __construct() {
+        echo "Magic Function Constructor Called.\n";
+    }
+
+    public function __destruct() {
+        echo "Magic Function Destructor Called.\n";
+    }
 }
 
-class C {
-	use T;
+trait Tname {
+    public function Tname() {
+        echo "Trait Name Constructor Called.\n";
+    }
+    public function Cname() {
+        echo "Class Name Constructor Called.\n";
+    }
 }
 
-$c = new C();
+class Cmagic {
+    use Tmagic;
+}
+
+class Cname {
+    use Tname;
+}
+
+$cm = new Cmagic();
+$cn = new Cname();

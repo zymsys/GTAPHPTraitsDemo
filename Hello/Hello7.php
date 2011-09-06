@@ -13,12 +13,11 @@ trait TSpeaker {
 
 class SaySomething {
 	use TSuppliesHello, TSpeaker {
-		getHelloMessage as private;
-		sayIt as speak;
+		getHelloMessage as private speak;
+//		sayIt as speak;
 	}
 }
 
 $speaker = new SaySomething();
 $speaker->speak();
 $speaker->sayIt();
-echo "I said ".$speaker->getHelloMessage(); //Throws fatal error: Call to pvt.

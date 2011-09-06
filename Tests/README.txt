@@ -11,3 +11,6 @@ Can I hold state in a trait, or just methods?
 State1.php: Can application wide state be stored in static properties?
 
 State2.php: Can traits define properties for class instances?
+
+State3.php: Can we write getters and setters for instance variables?
+	(this was asked at the meetup, and this test made on the spot)

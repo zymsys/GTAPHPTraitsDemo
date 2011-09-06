@@ -1,18 +1,19 @@
 <?php
-
-trait bobo {
-	public $myvar;
-
-	function sayvar() {
-		echo $this->myvar;
+trait THasState {
+	static public $traitstatic;
+	static function showStateT() {
+		echo "Trait Static: ".THasState::$traitstatic."\n";
 	}
 }
 
-class b1 {
-	use bobo;
+class CUsesState {
+	use THasState;
+	function showStateC() {
+		echo "Trait Static: ".THasState::$traitstatic."\n";
+	}
 }
 
-$b = new b1();
-$b->myvar = "tea";
-$b->sayvar();
-?>
+THasState::$traitstatic = "TS";
+CUsesState::$traitstatic = "CS";
+THasState::showStateT();
+echo THasState::$traitstatic.CUsesState::$traitstatic;

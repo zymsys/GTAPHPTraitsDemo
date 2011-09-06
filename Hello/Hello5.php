@@ -20,4 +20,3 @@ class SaySomething {
 
 $speaker = new SaySomething();
 $speaker->sayIt();
-echo "I said ".$speaker->getHelloMessage();
